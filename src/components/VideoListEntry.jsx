@@ -4,17 +4,20 @@ class VideoListEntry extends React.Component {
 
   constructor(props) {
     super(props);
+    console.log('we are here', props);
+    console.log('Mr Meeseeks', this.props);
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="video-list-entry media">
         <div className="media-left media-middle">
-          <img className="media-object" src="https://i.ytimg.com/vi/1w8Z0UOXVaY/default.jpg" alt="" />
+          <img className="media-object" src={this.props.thumbnail} alt="" />
         </div>
       <div className="media-body">
-        <div className="video-list-entry-title">Video Title</div>
-          <div className="video-list-entry-detail">Video Description</div>
+        <div className="video-list-entry-title">{this.props.title}</div>
+          <div className="video-list-entry-detail">{this.props.description}</div>
         </div>
       </div>
     );

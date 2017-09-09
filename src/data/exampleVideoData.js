@@ -6,7 +6,7 @@ window.exampleVideoData = [{
   etag: 'abQHWywil_AkNqdqji7_FqiK-u4/Ykxo_CqKu8F8kcm-iNgL332gQTY',
   id: {
     kind: 'youtube#video',
-    videoId: '4ZAEBxGipoA'
+    videoId: 'uvqJ1mTkEuY'
   },
   snippet: {
     publishedAt: '2015-08-02T20:52:58.000Z',

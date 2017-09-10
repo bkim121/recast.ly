@@ -3,10 +3,31 @@
 
     constructor(props) {
       super(props);
+
       this.state = {
-        currentVideo: exampleVideoData[0],
-        videoList: exampleVideoData
+        currentVideo: window.exampleVideoData[0],
+        videoList: window.exampleVideoData
       };
+    }
+    
+    componentDidMount() {
+      this.getYouTubeVideos('cute kittens');    
+    }
+
+  
+    getYouTubeVideos(query) {
+      var options = {
+        key: this.props.API_KEY,
+        query: query
+      };
+  
+      this.props.searchYouTube(options, (videos) => {
+        this.setState({
+          videoList: videos,
+          currentVideo: videos[0]        
+        });
+
+      });
     }
     
     onItemClick(url) {
@@ -25,7 +46,7 @@
         <div>
           <nav className="navbar">
             <div className="col-md-6 offset-md-3">
-              <Search />
+              <Search handleSearchInputChange={this.getYouTubeVideos.bind(this)}/>
             </div>
           </nav>
           <div className="row">
